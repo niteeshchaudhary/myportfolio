@@ -2,16 +2,19 @@
 .large-header {
 	position: relative;
 	width: 100%;
-	background: #333;
-	overflow: hidden;
+	overflow-x: hidden;
 	background-size: cover;
 	background-position: center center;
 	z-index: 1;
 }
 
-#large-header {
-	background-image: url('../images/demo-1-bg.jpg');
-}
+#myVideo {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%; 
+	min-height: 100%;
+  }
 
 .main-title {
 	position: absolute;
@@ -40,3 +43,4 @@
 		font-size: 3em;
 	}
 }
+

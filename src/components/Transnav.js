@@ -3,9 +3,17 @@ import "./navestyle.css";
 export default function Transnav() {
   return (
     <div className="navbar">
-      <p>Home</p>
+      <p>About</p>
+      <a
+        href="#experience"
+        style={{
+          color: "white",
+          textDecoration: "none",
+        }}
+      >
+        <p>Experience</p>
+      </a>
       <p>Projects</p>
-      <p>Experience</p>
     </div>
   );
 }

@@ -5,6 +5,9 @@ import TweenLite from "gsap";
 import { useEffect } from "react";
 import Transnav from "./Transnav";
 import Perinfo from "./personalinfo/Perinfo";
+import ETimeline from "./personalinfo/ETimeline";
+import Connect from "./personalinfo/Connect";
+import Skills from "./personalinfo/Skills";
 export default function BackCompo() {
   useEffect(() => {
     (function () {
@@ -220,13 +223,22 @@ export default function BackCompo() {
   }, []);
 
   return (
-    <div id="large-header" className="large-header">
-      <canvas id="demo-canvas"></canvas>
-      <Transnav />
-      <Perinfo />
-      <h1 className="main-title">
-        {/* Connect <span className="thin">Three</span> */}
-      </h1>
+    <div>
+      <video autoPlay muted loop id="myVideo" className="myVideo">
+        <source
+          src="https://firebasestorage.googleapis.com/v0/b/portfolio-5712a.appspot.com/o/space2.mp4?alt=media&token=57c1bfb8-d3b3-4786-ae81-227633125736"
+          type="video/mp4"
+        />
+      </video>
+
+      <div id="large-header" className="large-header">
+        <canvas id="demo-canvas"></canvas>
+        <Transnav />
+        <Perinfo />
+        <ETimeline />
+        <Skills />
+        <Connect />
+      </div>
     </div>
   );
 }

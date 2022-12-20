@@ -11,7 +11,7 @@ export default function Perinfo() {
           alt="profile Pic"
         />
       </div>
-      <div class="textholder">
+      <div className="textholder">
         <h1>Niteesh Kamal Chaudhary</h1>
         <h2>Software Developer</h2>
         <p>
