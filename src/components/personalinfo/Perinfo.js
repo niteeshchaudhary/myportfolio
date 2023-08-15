@@ -4,7 +4,7 @@ import "../block.css";
 
 export default function Perinfo() {
   return (
-    <div className="blocks">
+    <div className="blocks" id="About">
       <div className="imgholder">
         <img
           src="https://avatars.githubusercontent.com/u/66108270?v=4"

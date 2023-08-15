@@ -3,7 +3,15 @@ import "./navestyle.css";
 export default function Transnav() {
   return (
     <div className="navbar">
-      <p>About</p>
+      <a
+        href="#About"
+        style={{
+          color: "white",
+          textDecoration: "none",
+        }}
+      >
+        <p>About</p>
+      </a>
       <a
         href="#experience"
         style={{
@@ -13,7 +21,15 @@ export default function Transnav() {
       >
         <p>Experience</p>
       </a>
-      <p>Projects</p>
+      <a
+        href="#projects"
+        style={{
+          color: "white",
+          textDecoration: "none",
+        }}
+      >
+        <p>Projects</p>
+      </a>
     </div>
   );
 }
