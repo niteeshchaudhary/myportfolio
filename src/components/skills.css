@@ -1,0 +1,19 @@
+.skills{
+    margin-bottom: 10rem;
+}
+code{
+    border-left: 3px solid white ;
+    border-bottom: 5px solid white ;
+    border-radius: 1rem;
+    margin:0rem 0.5rem 0rem 0.5rem; 
+}
+
+code img{
+    max-width:5rem;
+    max-height:5rem;
+    height:10%;
+    width:10%;
+    min-width:1rem;
+    min-height:1rem;
+    margin:1rem 0rem 0rem 0rem;
+}

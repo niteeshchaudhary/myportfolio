@@ -1,12 +1,20 @@
+import "../skills.css";
+import unityico from "../../images/unity.svg";
+import linuxico from "../../images/linux.svg";
+import androidico from "../../images/android.svg";
+import gitico from "../../images/git.svg";
+import expressico from "../../images/express.svg";
+import cloudico from "../../images/cloud.svg";
 export default function Skills() {
   return (
-    <div>
+    <div className="skills">
       <img
         align="left"
         height="400"
         width="400"
         alt="GIF"
         src="https://firebasestorage.googleapis.com/v0/b/portfolio-5712a.appspot.com/o/Picture1.png?alt=media&token=0958ee42-545a-40a5-837c-bd5e51700221"
+        style={{ margin: "5rem 0 0 0" }}
       />
       <br />
       <h2 style={{ color: "white" }}>**SKILLS I KNOW:**</h2>
@@ -76,11 +84,7 @@ export default function Skills() {
         />
       </code>
       <code>
-        <img
-          height="40"
-          width="40"
-          src="https://brandeps.com/logo-download/H/HTML-5-logo-vector-01.svg"
-        />
+        <img height="40" width="40" src={cloudico} />
       </code>
       <code>
         <img
@@ -90,11 +94,7 @@ export default function Skills() {
         />
       </code>
       <code>
-        <img
-          height="40"
-          width="40"
-          src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/github-api/github-api.png"
-        />
+        <img height="40" width="40" src={gitico} />
       </code>
       <code>
         <img
@@ -125,25 +125,13 @@ export default function Skills() {
         />
       </code>
       <code>
-        <img
-          height="40"
-          width="40"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT1PKsfJXnxOqnTRiIZ8VcdJDYBXD-qZnnpw&usqp=CAU"
-        />
+        <img height="40" width="40" src={expressico} />
       </code>
       <code>
-        <img
-          height="40"
-          width="40"
-          src="https://brandeps.com/logo-download/A/Android-logo-vector-02.svg"
-        />
+        <img height="40" width="40" src={androidico} />
       </code>
       <code>
-        <img
-          height="40"
-          width="40"
-          src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Linux_Logo_in_Linux_Libertine_Font.svg"
-        />
+        <img height="40" width="40" src={linuxico} />
       </code>
       <code>
         <img
@@ -160,11 +148,7 @@ export default function Skills() {
         />
       </code>
       <code>
-        <img
-          height="40"
-          width="30"
-          src="https://brandeps.com/icon-download/U/Unity-icon-vector-01.svg"
-        />
+        <img height="40" width="30" src={unityico} />
       </code>
     </div>
   );

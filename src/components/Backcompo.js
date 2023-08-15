@@ -6,8 +6,10 @@ import { useEffect } from "react";
 import Transnav from "./Transnav";
 import Perinfo from "./personalinfo/Perinfo";
 import ETimeline from "./personalinfo/ETimeline";
+import Experience from "./personalinfo/Experience";
 import Connect from "./personalinfo/Connect";
 import Skills from "./personalinfo/Skills";
+import Portfolio from "./personalinfo/Portfolio";
 export default function BackCompo() {
   useEffect(() => {
     (function () {
@@ -228,6 +230,7 @@ export default function BackCompo() {
         <source
           src="https://firebasestorage.googleapis.com/v0/b/portfolio-5712a.appspot.com/o/space2.mp4?alt=media&token=57c1bfb8-d3b3-4786-ae81-227633125736"
           type="video/mp4"
+          style={{ width: "100%" }}
         />
       </video>
 
@@ -235,8 +238,10 @@ export default function BackCompo() {
         <canvas id="demo-canvas"></canvas>
         <Transnav />
         <Perinfo />
-        <ETimeline />
+        {/* <ETimeline /> */}
+        <Experience />
         <Skills />
+        <Portfolio />
         <Connect />
       </div>
     </div>

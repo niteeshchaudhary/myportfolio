@@ -2,7 +2,7 @@ import "../timeline.css";
 import { useEffect } from "react";
 export default function ETimeline() {
   return (
-    <div id="experience" className="expblock" style={{ margin: "0 0 10rem 0" }}>
+    <div id="experience" className="expblock">
       <div style={{ margin: "3rem" }}>
         <h1>Experience</h1>
       </div>
