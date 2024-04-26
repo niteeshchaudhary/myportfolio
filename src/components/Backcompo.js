@@ -10,6 +10,7 @@ import Experience from "./personalinfo/Experience";
 import Connect from "./personalinfo/Connect";
 import Skills from "./personalinfo/Skills";
 import Portfolio from "./personalinfo/Portfolio";
+import Contact from "./Contact";
 export default function BackCompo() {
   useEffect(() => {
     (function () {
@@ -242,6 +243,7 @@ export default function BackCompo() {
         <Experience />
         <Skills />
         <Portfolio />
+        <Contact/>
         <Connect />
       </div>
     </div>
