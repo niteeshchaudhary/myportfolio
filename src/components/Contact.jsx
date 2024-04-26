@@ -70,7 +70,6 @@ export default function Contact() {
         <form
           className="contact-formw roww"
           onSubmit={sendEmail}
-          // {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}
         >
           <div className="form-field col x-50">
             <input
