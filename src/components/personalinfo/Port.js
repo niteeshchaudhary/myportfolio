@@ -1,5 +1,4 @@
 import "../portfolio.css";
-import "https://rawcdn.githack.com/flackr/scroll-timeline/3063e156535f3ab1ffc8a4000ffdd3290232c121/dist/scroll-timeline.js";
 import { useEffect } from "react";
 export default function Portfolio() {
   useEffect(() => {
@@ -52,7 +51,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/1.04213a58.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -67,7 +66,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/2.3ff1fdb6.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -82,7 +81,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/3.b606be87.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -97,7 +96,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/4.24fd614c.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -112,7 +111,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/5.d13f5e61.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -127,7 +126,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/6.786c7db4.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -142,7 +141,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/7.df95fe5c.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -157,7 +156,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/8.e7faf38e.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -174,7 +173,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/11.ba790930.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -189,7 +188,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/12.c3a8d893.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -204,7 +203,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/13.3bd52250.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -219,7 +218,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/14.b7263516.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -234,7 +233,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/15.55bda21b.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -249,7 +248,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/16.eb88393b.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -266,7 +265,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/17.3450839a.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -281,7 +280,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/18.763d23f6.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -296,7 +295,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/19.be25549f.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -311,7 +310,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/20.d7a9356b.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -326,7 +325,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/21.4c8813a5.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -341,7 +340,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/22.ec97ea6e.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -356,7 +355,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/23.49e8893a.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""
@@ -371,7 +370,7 @@ export default function Portfolio() {
             <div class="column__item-imgwrap">
               <img
                 src="https://tympanus.net/Development/ColumnScroll/24.057dafba.jpg"
-                alt=""
+                alt="..."
                 title=""
                 height=""
                 width=""

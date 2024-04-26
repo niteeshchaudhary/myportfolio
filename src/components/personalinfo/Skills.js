@@ -22,6 +22,7 @@ export default function Skills() {
       <br />
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://brandeps.com/logo-download/C/C-logo-vector-01.svg"
@@ -29,6 +30,7 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://brandeps.com/logo-download/C/C++-logo-vector-01.svg"
@@ -36,6 +38,7 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://brandeps.com/logo-download/C/C-Sharp-logo-vector-01.svg"
@@ -43,6 +46,7 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://brandeps.com/logo-download/P/PHP-logo-vector-01.svg"
@@ -50,6 +54,7 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://brandeps.com/logo-download/J/Java-logo-vector-01.svg"
@@ -57,6 +62,7 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://brandeps.com/logo-download/H/HTML-5-logo-vector-01.svg"
@@ -64,6 +70,7 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://brandeps.com/logo-download/J/JavaScript-logo-vector-01.svg"
@@ -71,6 +78,7 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://brandeps.com/icon-download/P/Python-icon-vector-04.svg"
@@ -78,26 +86,31 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://brandeps.com/logo-download/C/CSS-3-logo-vector-01.svg"
         />
       </code>
       <code>
-        <img height="40" width="40" src={cloudico} />
+        <img
+        alt="code_image" height="40" width="40" src={cloudico} />
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/1024px-Git_icon.svg.png"
         />
       </code>
       <code>
-        <img height="40" width="40" src={gitico} />
+        <img
+        alt="code_image" height="40" width="40" src={gitico} />
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png"
@@ -105,6 +118,7 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg"
@@ -112,6 +126,7 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://brandeps.com/logo-download/R/React-logo-vector-01.svg"
@@ -119,22 +134,27 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="40"
           src="https://brandeps.com/logo-download/M/MySQL-logo-vector-01.svg"
         />
       </code>
       <code>
-        <img height="40" width="40" src={expressico} />
-      </code>
-      <code>
-        <img height="40" width="40" src={androidico} />
-      </code>
-      <code>
-        <img height="40" width="40" src={linuxico} />
+        <img
+        alt="code_image" height="40" width="40" src={expressico} />
       </code>
       <code>
         <img
+        alt="code_image" height="40" width="40" src={androidico} />
+      </code>
+      <code>
+        <img
+        alt="code_image" height="40" width="40" src={linuxico} />
+      </code>
+      <code>
+        <img
+        alt="code_image"
           height="40"
           width="30"
           src="https://brandeps.com/icon-download/V/Visual-studio-code-icon-vector-02.svg"
@@ -142,13 +162,15 @@ export default function Skills() {
       </code>
       <code>
         <img
+        alt="code_image"
           height="40"
           width="30"
           src="https://brandeps.com/icon-download/V/Visual-studio-icon-vector-02.svg"
         />
       </code>
       <code>
-        <img height="40" width="30" src={unityico} />
+        <img
+        alt="code_image" height="40" width="30" src={unityico} />
       </code>
     </div>
   );

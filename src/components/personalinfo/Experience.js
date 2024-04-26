@@ -25,7 +25,7 @@ export default function Experience() {
     return (
       <div className="vtimeline-point" key={"exp" + index}>
         <div className="vtimeline-icon">
-          <img className="img-circle" src={ele?.image} width="50" height="50" />
+          <img className="img-circle" alt="circular image" src={ele?.image} width="50" height="50" />
         </div>
         <div className="vtimeline-block">
           <span className="vtimeline-date">{ele?.time}</span>

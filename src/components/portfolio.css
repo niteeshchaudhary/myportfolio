@@ -91,12 +91,6 @@
             transform: translateY(calc(100% - 100vh));
         }
     }
-
-    /* Set up scroll-timeline */
-    @scroll-timeline scroll-in-document {
-        source: auto; /* Default scroll-timeline: scrolling in the document */
-    }
-
     /* Hook our animation with the timeline to our columns */
     .column-reverse {
         animation: 1s adjust-position linear forwards;
