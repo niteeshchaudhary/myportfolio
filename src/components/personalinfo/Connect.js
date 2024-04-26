@@ -11,7 +11,7 @@ export default function Connect() {
           padding: "0 2rem",
         }}
       >
-        <a href="https://www.linkedin.com/in/niteesh-kamal-chaudhary-a52211134/">
+        <a href="https://www.linkedin.com/in/niteesh-kamal-chaudhary/">
           <img
             src="https://brandeps.com/icon-download/L/Linkedin-option-icon-vector-01.svg"
             alt="NKC"
@@ -24,7 +24,7 @@ export default function Connect() {
             }}
           />
         </a>
-        <a href="https://www.linkedin.com/in/niteesh-kamal-chaudhary-a52211134/">
+        <a href="https://www.linkedin.com/in/niteesh-kamal-chaudhary//">
           <img
             src="https://brandeps.com/icon-download/F/Facebook-option-icon-vector-01.svg"
             alt="NKC"
@@ -37,7 +37,7 @@ export default function Connect() {
             }}
           />
         </a>
-        <a href="https://www.linkedin.com/in/niteesh-kamal-chaudhary-a52211132/">
+        <a href="https://twitter.com/Niteesh12857418">
           <img
             src="https://brandeps.com/icon-download/T/Twitter-icon-vector-19.svg"
             alt="NKC"
@@ -50,7 +50,7 @@ export default function Connect() {
             }}
           />
         </a>
-        <a href="https://www.linkedin.com/in/niteesh-kamal-chaudhary-a52211132/">
+        <a href="https://www.linkedin.com/in/niteesh-kamal-chaudhary//">
           <img
             src="https://brandeps.com/logo-download/I/Instagram-Icon-logo-vector-01.svg"
             alt="NKC"
