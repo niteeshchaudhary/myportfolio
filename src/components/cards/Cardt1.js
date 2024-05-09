@@ -37,5 +37,5 @@ export default function Card1() {
       </div>
     );
   };
-  return <>{pro.map((ele, index) => display(ele, index))}</>;
+  return <>{data.map((ele, index) => display(ele, index))}</>;
 }
