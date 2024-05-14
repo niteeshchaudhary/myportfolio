@@ -39,13 +39,13 @@ export default function Experience() {
     );
   };
   return (
-    <section id="experience">
+    <div id="experience">
       <h2 className="heading">EXPERIENCE</h2>
       <div id="experience-timeline">
         {data
           ? data.map((ele, index) => display(ele, index))
           : expr.map((ele, index) => display(ele, index))}
       </div>
-    </section>
+    </div>
   );
 }

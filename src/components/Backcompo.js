@@ -236,15 +236,24 @@ export default function BackCompo() {
       </video>
 
       <div id="large-header" className="large-header">
-        <canvas id="demo-canvas"></canvas>
-        <Transnav />
-        <Perinfo />
-        {/* <ETimeline /> */}
-        <Experience />
-        <Skills />
-        <Portfolio />
-        <Contact/>
-        <Connect />
+        
+          <canvas id="demo-canvas" ></canvas>
+        
+        <div style={{position:"fixed",left:0,top:0,width:"100%",height:"100vh",overflow:"hidden"}}>
+        <div className="innercontainer" style={{display:"flex",flexDirection:"column",overflowY:"scroll",overflowX:"hidden",height:"100vh"}}>
+          <Transnav />
+          <Perinfo />
+          <Experience />
+          <Skills />
+          <Portfolio />
+          <div>
+          <Contact/>
+          </div>
+          <div>
+          <Connect />
+          </div>
+          </div>
+        </div>
       </div>
     </div>
   );
