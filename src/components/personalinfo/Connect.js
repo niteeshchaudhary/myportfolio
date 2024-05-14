@@ -2,7 +2,7 @@ import "../timeline.css";
 import { useEffect } from "react";
 export default function Connect() {
   return (
-    <div className="expblock">
+    <div className="expblock" id="contact us">
       <h2>Connect with me:</h2>
       <div
         style={{

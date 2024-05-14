@@ -7,7 +7,7 @@ import expressico from "../../images/express.svg";
 import cloudico from "../../images/cloud.svg";
 export default function Skills() {
   return (
-    <div className="skills">
+    <div className="skills" id="skills">
       <img
         align="left"
         height="400"

@@ -4,7 +4,7 @@ import "../block.css";
 import { getDatabase, ref, child, get } from "firebase/database";
 
 export default function Perinfo() {
-  const [data, setData] = useState(`I am an aspiring software engineer who enjoys solving puzzles and
+  const [data, setData] = useState(`Hello! I am an aspiring software engineer who enjoys solving puzzles and
   problems. I have strong technical skills and an academic background in
   engineering, coding and development. I'm 
   interested in internship roles in software development, full stack
@@ -26,7 +26,7 @@ export default function Perinfo() {
       });
   }, []);
   return (
-    <div className="blocks" id="About">
+    <div className="blocks" id="home">
       <div className="imgholder">
         <img
           src="https://avatars.githubusercontent.com/u/66108270?v=4"
