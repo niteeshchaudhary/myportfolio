@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Card2 from "../cards/Card2";
+import "../portfolio.css";
 export default function Portfolio() {
   return (
     <section id="projects">

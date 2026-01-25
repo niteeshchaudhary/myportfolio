@@ -23,21 +23,35 @@ export default function Card2() {
   }, []);
 
   const display = (ele, index) => {
+    const handleClick = (e) => {
+      if (!ele?.link || ele?.link === "#") {
+        e.preventDefault();
+        alert("GitHub link not available for this project");
+        return;
+      }
+      // Let the link work normally - don't prevent default
+      console.log("Opening GitHub link:", ele.link);
+    };
+
     return (
-      <div class="box"  key={"ele" + (index + 1)} >
-        <div class="card">
-         <a href={ele?.link} target="blank">
-         <div className="img-box">
-            <img src={ele?.thumb} alt={"pro" + (index + 1)} />
-          </div>
-          <div class="content">
-            <h2 class="title">{ele?.name}</h2>
-            <p class="copy">Click To check it on Github</p>
-          </div>
-        </a>
+      <div className="box" key={"ele" + (index + 1)}>
+        <div className="card">
+          <a 
+            href={ele?.link || "#"} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={handleClick}
+          >
+            <div className="img-box">
+              <img src={ele?.thumb} alt={ele?.name || `Project ${index + 1}`} />
+            </div>
+            <div className="content">
+              <h2 className="title">{ele?.name}</h2>
+              <p className="copy">Click to view on GitHub</p>
+            </div>
+          </a>
         </div>
       </div>
-      
     );
   };
   return <>{data.map((ele, index) => display(ele, index))}</>;

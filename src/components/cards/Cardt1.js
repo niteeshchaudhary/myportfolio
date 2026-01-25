@@ -23,9 +23,19 @@ export default function Card1() {
   const display = (ele, index) => {
     return (
       <div className="box" key={"ele" + (index + 1)}>
-        <a href={ele?.link} target="blank">
+        <a 
+          href={ele?.link || "#"} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          onClick={(e) => {
+            if (!ele?.link) {
+              e.preventDefault();
+              alert("GitHub link not available for this project");
+            }
+          }}
+        >
           <div className="img-box">
-            <img src={ele?.thumb} alt={"pro" + (index + 1)} />
+            <img src={ele?.thumb} alt={ele?.name || `Project ${index + 1}`} />
           </div>
           <div className="content">
             <h2>

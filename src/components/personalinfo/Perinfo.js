@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react";
 
 import "../block.css";
 import { getDatabase, ref, child, get } from "firebase/database";
+import TypingAnimation from "../TypingAnimation";
 
 export default function Perinfo() {
   const [data, setData] = useState(`Hello! I am an aspiring software engineer who enjoys solving puzzles and
@@ -25,6 +26,9 @@ export default function Perinfo() {
         console.error(error);
       });
   }, []);
+
+  const roles = ["Software Developer", "Full Stack Developer", "Game Developer", "Problem Solver"];
+
   return (
     <div className="blocks" id="home">
       <div className="imgholder">
@@ -35,7 +39,9 @@ export default function Perinfo() {
       </div>
       <div className="textholder">
         <h1>Niteesh Kamal Chaudhary</h1>
-        <h2>Software Developer</h2>
+        <h2>
+          <TypingAnimation texts={roles} speed={150} />
+        </h2>
         <p>
           {data}
         </p>

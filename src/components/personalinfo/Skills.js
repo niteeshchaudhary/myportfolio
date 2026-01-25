@@ -18,6 +18,7 @@ export default function Skills() {
       />
       <br />
       <h2 style={{ color: "white" }}>**SKILLS I KNOW:**</h2>
+      <div className="skills-container">
       <br />
       <br />
       <code>
@@ -172,6 +173,7 @@ export default function Skills() {
         <img
         alt="code_image" height="40" width="30" src={unityico} />
       </code>
+      </div>
     </div>
   );
 }

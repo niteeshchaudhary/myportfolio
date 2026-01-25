@@ -21,46 +21,74 @@ export default function Contact() {
 
   function sendEmail(e) {
     e.preventDefault();
-    var wrapper = $("#button-wrapper");
-    if (wrapper.not(".checked")) {
-      wrapper.addClass("checked");
-      setTimeout(function () {
-        wrapper.removeClass("checked");
-      }, 8000);
+    
+    try {
+      var wrapper = $("#button-wrapper");
+      if (wrapper.not(".checked")) {
+        wrapper.addClass("checked");
+        setTimeout(function () {
+          wrapper.removeClass("checked");
+        }, 8000);
+      }
+      
+      emailjs
+        .sendForm(
+          "service_j9ovyx9",
+          "template_jlm3o95",
+          e.target,
+          "qzrCzPgtdSbiIJl6v"
+        )
+        .then(
+          (result) => {
+            console.log("Email sent successfully:", result.text);
+            emailjs
+              .sendForm(
+                "service_j9ovyx9",
+                "template_rn5puj8",
+                e.target,
+                "qzrCzPgtdSbiIJl6v"
+              )
+              .then((rs) => {
+                console.log("Confirmation email sent:", rs);
+                // Clear form fields
+                var ele = document.getElementsByClassName("input-text");
+                for (var i = 0; i < ele.length; i++) {
+                  ele[i].value = "";
+                  $(ele[i]).removeClass("not-empty");
+                }
+                ele = document.getElementsByClassName("input-area");
+                for (i = 0; i < ele.length; i++) {
+                  ele[i].value = "";
+                  $(ele[i]).removeClass("not-empty");
+                }
+                // Remove checked class after success
+                setTimeout(function () {
+                  wrapper.removeClass("checked");
+                }, 2000);
+              })
+              .catch((error) => {
+                console.error("Error sending confirmation email:", error);
+                wrapper.removeClass("checked");
+                alert("Message sent, but confirmation email failed. Please check the console for details.");
+              });
+          },
+          (error) => {
+            console.error("Error sending email:", error);
+            wrapper.removeClass("checked");
+            alert("Failed to send message. Please check the console for details or try again later.");
+          }
+        )
+        .catch((error) => {
+          console.error("Unexpected error:", error);
+          wrapper.removeClass("checked");
+          alert("An unexpected error occurred. Please try again later.");
+        });
+    } catch (error) {
+      console.error("Error in sendEmail function:", error);
+      var wrapper = $("#button-wrapper");
+      wrapper.removeClass("checked");
+      alert("An error occurred while processing your request. Please try again.");
     }
-    emailjs
-      .sendForm(
-        "service_j9ovyx9",
-        "template_jlm3o95",
-        e.target,
-        "qzrCzPgtdSbiIJl6v"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          emailjs
-            .sendForm(
-              "service_j9ovyx9",
-              "template_rn5puj8",
-              e.target,
-              "qzrCzPgtdSbiIJl6v"
-            )
-            .then((rs) => {
-              console.log("HI", rs);
-              var ele = document.getElementsByClassName("input-text");
-              for (var i = 0; i < ele.length; i++) {
-                ele[i].value = "";
-              }
-              ele = document.getElementsByClassName("input-area");
-              for (i = 0; i < ele.length; i++) {
-                ele[i].value = "";
-              }
-            });
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
   }
 
   return (
@@ -118,8 +146,15 @@ export default function Contact() {
             />
             <div id="button-wrapper">
               <a
+                href="#"
                 className="submit"
-                onClick={() => document.getElementById("submitcontact").click()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const submitBtn = document.getElementById("submitcontact");
+                  if (submitBtn) {
+                    submitBtn.click();
+                  }
+                }}
               >
                 Send
               </a>
@@ -164,19 +199,62 @@ export default function Contact() {
             </svg>
           </div>
         </form>
-      </section>
 
-      {/* <p className="note">
-        Based on{" "}
-        <a
-          className="link"
-          href="http://redcollar.digital/contacts/"
-          target="blank"
-        >
-          Red Collar Contact Form
-        </a>
-        .
-      </p> */}
+        {/* Connect with me section */}
+        <div className="connect-section">
+          <h2 className="connect-title">Connect with me</h2>
+          <div className="social-links">
+            <a 
+              href="https://www.linkedin.com/in/niteesh-kamal-chaudhary/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-link"
+            >
+              <img
+                src="https://brandeps.com/icon-download/L/Linkedin-option-icon-vector-01.svg"
+                alt="LinkedIn"
+                className="social-icon"
+              />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/niteesh-kamal-chaudhary/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-link"
+            >
+              <img
+                src="https://brandeps.com/icon-download/F/Facebook-option-icon-vector-01.svg"
+                alt="Facebook"
+                className="social-icon"
+              />
+            </a>
+            <a 
+              href="https://twitter.com/Niteesh12857418" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-link"
+            >
+              <img
+                src="https://brandeps.com/icon-download/T/Twitter-icon-vector-19.svg"
+                alt="Twitter"
+                className="social-icon"
+              />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/niteesh-kamal-chaudhary/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-link"
+            >
+              <img
+                src="https://brandeps.com/logo-download/I/Instagram-Icon-logo-vector-01.svg"
+                alt="Instagram"
+                className="social-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

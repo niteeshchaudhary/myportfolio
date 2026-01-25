@@ -1,241 +1,214 @@
-
-#home h2 {
-    font-size: 29px;
+#experience {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  min-height: calc(100vh - 16rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#home h4 {
-    font-size: 23px;
+#experience .heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
 }
 
-#home-content {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+#experience .heading::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
 }
 
-footer {
-     background-color: transparent; 
-    }
+/* Vertical Timeline */
+#experience-timeline {
+  position: relative;
+  padding: 2rem 0;
+}
 
-/* Removing This query causes that horizontal scrollbar on navbar collapse appears - BEGIN */
+#experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary-gradient);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.vtimeline-point {
+  position: relative;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.vtimeline-point:nth-child(odd) {
+  flex-direction: row;
+}
+
+.vtimeline-point:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.vtimeline-icon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 0 30px rgba(102, 126,234, 0.6);
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.vtimeline-icon:hover {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 0 40px rgba(102, 126, 234, 0.8);
+}
+
+.vtimeline-icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.vtimeline-block {
+  width: 45%;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vtimeline-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.vtimeline-block:hover {
+  transform: translateY(-10px);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
+}
+
+.vtimeline-block:hover::before {
+  opacity: 0.1;
+}
+
+.vtimeline-date {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--accent-gradient);
+  color: #ffffff;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+.vtimeline-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vtimeline-content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.vtimeline-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  #experience-timeline::before {
+    left: 30px;
+  }
+  
+  .vtimeline-point {
+    flex-direction: row !important;
+  }
+  
+  .vtimeline-icon {
+    left: 30px;
+  }
+  
+  .vtimeline-block {
+    width: calc(100% - 100px);
+    margin-left: 100px;
+  }
+  
+  #experience .heading {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
-    .navbar-nav {
-        margin: 0;
-        padding: 7.5px 15px;
-    }
-    ul > li > a:hover {
-        margin: 0px 0px 0px 0px;   
-      }     
-}
-/* Removing This query causes that horizontal scrollbar on navbar collapse appears - END */
-
-@keyframes animatedgradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-
-    
-@media screen and (max-width: 768px){
-    .col-sm-4 {
-      text-align: center;
-
-    }
-    .col-sm-8 {
-        text-align: center;
-        margin: 25px 0;
-      }
-      .navbar {
-        opacity: 0.8; 
-       
-    }
-}
-
-#lead-down a{
-    color:#E7F7FF
-}
-
-#lead-down {
-      position:absolute;
-      left:0;
-      right:0;
-      width:100%;
-      text-align:center;
-      z-index:10;
-      bottom:15px;
-      color:#E7F7FF
-}
-
-#lead-down span {
-    cursor:pointer;
-    display:block;
-    margin:0 auto;
-    width:35px;
-    height:35px;
-    border-radius:50%;
-    border:3px solid #E7F7FF;
-    text-align:center
-}
-#lead-down i{
-    padding-top:5px
-}
-
-.img-circle{
-    border-radius:50%;
-    box-shadow: 0px 0px 11px var(--borderc);
-}
-.logo{
-    color: #3A3E40;
-    font-size: 200px;
-    
+  #experience {
+    padding: 2rem 1rem;
   }
-
-#about h2 i {
-    font-size: 200px;
-}  
-
-#contact i {
-    padding:  10px 20px 0px 20px;
-}
-
-.thumbnail {
-    padding: 0 0 15px 0;
-    border: none;
-    border-radius: 0;
-    background-color: #DFDEE5;
-    height: 100%;
-    width: 100%;
-    margin-bottom: 15px; 
-   
+  
+  .vtimeline-block {
+    padding: 1.5rem;
   }
-  .thumbnail img {
-    width:100%;
-    height:100%;
-
+  
+  .vtimeline-content h3 {
+    font-size: 1.2rem;
   }
-
- .heading{
-    font-size: 3rem;
-	 position:relative;
-	 display:inline-block;
-     color:white;
-	 }
-
- .heading:after{
-	position:absolute;
-	content:'';
-	top:100%;
-	height:0.2rem;
-	width:110%;
-	left:0;right:0;margin:0 auto;
-	background: linear-gradient(60deg, #f79533, #F36F52, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-    z-index: 0;
-    animation: animatedgradient 3s ease alternate infinite;
-    background-size: 300% 300%; 
-	}
-	
-	
-
-
-	
- #experience-timeline>div h3{
-	font-size:1.6em;
-	font-weight:500;
-	color:var(--rolecolor);
-	display:inline-block;
-	margin:0
-	}
-	
- #experience-timeline>div h4{
-	margin:0 0 10px 0
-	}
-	
- #experience-timeline>div p{
-	color:var(--rolecolor);
-	font-size:0.9em;
-	margin:0
-	}
-
- #experience-timeline:after{
-	content:none
-	}
- 
- #experience{
-	text-align:center;
-    margin: 10rem auto;
-	/* border-bottom:1px solid #dcd9d9 */
-	}
-
- #experience-timeline{
-	margin:30px auto 0 auto;
-	position:relative;
-	max-width:1000px
-	}
- #experience-timeline:before{
-	position:absolute;
-	content:'';
-	top:0;bottom:0;
-	left:303px;
-	right:auto;
-	height:100%;
-	width:3px;
-	background: linear-gradient(135deg, #f79533, #F36F52, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-    z-index: 0;
-    animation: animatedgradient 3s ease alternate infinite;
-    background-size: 300% 300%;
-	}
-	
-	
-#experience-timeline:after{position:absolute;content:'';width:3px;height:40px;background:#3498db;background:linear-gradient(to bottom, #1098ad, rgba(52,152,219,0));top:100%;left:303px}
-.vtimeline-content{
-    margin-left:350px;
-    background:white;
-    border:2px solid green;
-    padding:1.2rem 15px 2rem 15px;
-    border-radius:1rem;
-    text-align:left;
-    box-shadow: 0px 0px 15px red;
+  
+  .vtimeline-content h4 {
+    font-size: 1rem;
+  }
 }
 
-.vtimeline-point{position:relative;display:block;vertical-align:top;margin-bottom:30px}
-.vtimeline-icon{position:relative;color:#fff;width:50px;height:50px;background:#fff;border-radius:50%;float:left;z-index:2;margin-left:280px}
-.vtimeline-icon i{display:block;font-size:2em;margin-top:10px}
-
-.vtimeline-date{
-	width:260px;
-	text-align:right;
-    color:white;
-	position:absolute;
-	left:0;top:10px;
-	font-weight:400;
-	}
-	
-@media only screen and (max-width: 750px){
-	
-#experience-timeline:before,#experience-timeline:after{left:23px}.vtimeline-date{
-	width:auto;
-	text-align:left;
-	position:relative;
-	margin-bottom:15px;display:block;margin-left:70px}
-	
-.vtimeline-icon{
-	margin-left:0}
-	
-.vtimeline-content{
-	margin-left:70px;
-}
-}
-
- .timpng{
-	 border-radius :50%
- }
