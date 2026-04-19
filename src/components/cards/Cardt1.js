@@ -2,6 +2,9 @@ import "./card1.css";
 import { useState, useEffect } from "react";
 import pro from "./projects.json";
 import { getDatabase, ref, child, get } from "firebase/database";
+
+const FALLBACK_PROJECT_IMAGE =
+  "https://placehold.co/600x400/1a1a2e/ffffff?text=Project+Preview";
 export default function Card1() {
   const [data, setData] = useState(pro);
 
@@ -35,7 +38,15 @@ export default function Card1() {
           }}
         >
           <div className="img-box">
-            <img src={ele?.thumb} alt={ele?.name || `Project ${index + 1}`} />
+            <img
+              src={ele?.thumb || FALLBACK_PROJECT_IMAGE}
+              alt={ele?.name || `Project ${index + 1}`}
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = FALLBACK_PROJECT_IMAGE;
+              }}
+            />
           </div>
           <div className="content">
             <h2>
