@@ -63,8 +63,13 @@ code {
   color: #ffffff;
 }
 
-/* Smooth transitions */
-* {
+/* Keep transitions on interactive UI only to avoid scroll jank */
+a,
+button,
+input,
+textarea,
+.box,
+.card {
   transition: all 0.3s ease;
 }
 

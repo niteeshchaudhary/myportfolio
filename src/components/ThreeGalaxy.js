@@ -397,7 +397,8 @@ export default function ThreeGalaxy() {
       if (scrollContainer) {
         const scrollTop = scrollContainer.scrollTop;
         const scrollHeight = scrollContainer.scrollHeight - scrollContainer.clientHeight;
-        scrollProgressRef.current = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+        const progress = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+        scrollProgressRef.current = Math.max(0, Math.min(1, progress));
       }
     };
 
@@ -450,12 +451,23 @@ export default function ThreeGalaxy() {
         const scrollOffset = scrollProgress * 3;
         const mouseInfluence = 0.5;
         
-        camera.position.x += (mouse.x * mouseInfluence - camera.position.x) * 0.05;
-        camera.position.y += (mouse.y * mouseInfluence + scrollOffset - camera.position.y) * 0.05;
-        camera.position.z = 5 - scrollProgress * 2; // Zoom in as you scroll
+        const targetX = mouse.x * mouseInfluence;
+        const targetY = (mouse.y * mouseInfluence) + scrollOffset;
+        const targetZ = 5 - (scrollProgress * 2);
         
-        // Camera rotation based on scroll
-        camera.rotation.z = scrollProgress * 0.2;
+        // Capped speed regardless of fast scrolling (adjusted for frame rate)
+        const frameSpeedMult = Math.min(deltaTime * 60, 2); 
+        const maxSpeedBase = 0.04 * frameSpeedMult;
+        
+        const approach = (current, target, factor, maxStep) => {
+          const diff = target - current;
+          const step = diff * factor;
+          return current + (Math.abs(step) > maxStep ? Math.sign(step) * maxStep : step);
+        };
+        
+        camera.position.x = approach(camera.position.x, targetX, 0.05, maxSpeedBase);
+        camera.position.y = approach(camera.position.y, targetY, 0.05, maxSpeedBase);
+        camera.position.z = approach(camera.position.z, targetZ, 0.05, maxSpeedBase * 2);
         
         camera.lookAt(scene.position);
       }

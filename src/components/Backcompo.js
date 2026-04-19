@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import "./back.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -21,8 +21,24 @@ gsap.registerPlugin(ScrollTrigger);
 export default function BackCompo() {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
+  const handleContainerWheel = useCallback((event) => {
+    const container = event.currentTarget;
+    if (!container) return;
+
+    const maxTop = container.scrollHeight - container.clientHeight;
+    if (maxTop <= 0) return;
+
+    const nextTop = container.scrollTop + event.deltaY;
+    const clampedTop = Math.max(0, Math.min(maxTop, nextTop));
+    if (clampedTop !== container.scrollTop) {
+      event.preventDefault();
+      container.scrollTop = clampedTop;
+    }
+  }, []);
 
   useEffect(() => {
+    const cleanupCallbacks = [];
+
     // Setup GSAP ScrollTrigger animations for sections
     const setupScrollAnimations = () => {
       const scrollContainer = document.querySelector('.innercontainer');
@@ -604,18 +620,23 @@ export default function BackCompo() {
 
       scrollContainer.addEventListener('scroll', updateProgress);
       updateProgress(); // Initial update
+      cleanupCallbacks.push(() => {
+        scrollContainer.removeEventListener('scroll', updateProgress);
+      });
     };
 
     // Wait for DOM to be ready
-    setTimeout(() => {
+    const setupTimeout = setTimeout(() => {
       setupScrollAnimations();
-      setTimeout(() => {
+      const advancedTimeout = setTimeout(() => {
         setupAdvancedAnimations();
         setupScrollProgress();
       }, 200);
+      cleanupCallbacks.push(() => clearTimeout(advancedTimeout));
     }, 100);
+    cleanupCallbacks.push(() => clearTimeout(setupTimeout));
 
-    (function () {
+    const cleanupBackgroundAnimation = (function () {
       var width,
         height,
         largeHeader,
@@ -623,7 +644,9 @@ export default function BackCompo() {
         ctx,
         points,
         target,
-        animateHeader = true;
+        animateHeader = true,
+        animationFrameId = null,
+        scrollContainerEl = null;
 
       // Main
       initHeader();
@@ -700,7 +723,10 @@ export default function BackCompo() {
         if (!("ontouchstart" in window)) {
           window.addEventListener("mousemove", mouseMove);
         }
-        window.addEventListener("scroll", scrollCheck);
+        scrollContainerEl = document.querySelector('.innercontainer');
+        if (scrollContainerEl) {
+          scrollContainerEl.addEventListener("scroll", scrollCheck);
+        }
         window.addEventListener("resize", resize);
       }
 
@@ -796,7 +822,7 @@ export default function BackCompo() {
             points[i].circle.draw();
           }
         }
-        requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(animate);
       }
 
       function shiftPoint(p) {
@@ -852,10 +878,25 @@ export default function BackCompo() {
       function getDistance(p1, p2) {
         return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
       }
+
+      return function cleanup() {
+        if (!("ontouchstart" in window)) {
+          window.removeEventListener("mousemove", mouseMove);
+        }
+        if (scrollContainerEl) {
+          scrollContainerEl.removeEventListener("scroll", scrollCheck);
+        }
+        window.removeEventListener("resize", resize);
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+        }
+      };
     })();
 
     // Cleanup ScrollTrigger on unmount
     return () => {
+      cleanupCallbacks.forEach((cb) => cb());
+      cleanupBackgroundAnimation();
       try {
         if (ScrollTrigger && ScrollTrigger.getAll) {
           ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -890,7 +931,11 @@ export default function BackCompo() {
           <canvas id="demo-canvas" ref={canvasRef}></canvas>
         
         <div className="content-overlay" style={{position:"fixed",left:0,top:0,width:"100%",height:"100vh",overflow:"hidden",zIndex:2}}>
-        <div className="innercontainer" style={{display:"flex",flexDirection:"column",overflowY:"scroll",overflowX:"hidden",height:"100vh"}}>
+        <div
+          className="innercontainer"
+          onWheel={handleContainerWheel}
+          style={{display:"flex",flexDirection:"column",overflowY:"auto",overflowX:"hidden",height:"100vh",overscrollBehaviorY:"contain",touchAction:"pan-y"}}
+        >
           <Transnav />
           <div className="section-wrapper">
             <Perinfo />
