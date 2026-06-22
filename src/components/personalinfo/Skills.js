@@ -13,7 +13,7 @@ export default function Skills() {
         height="400"
         width="400"
         alt="GIF"
-        src="https://firebasestorage.googleapis.com/v0/b/portfolio-5712a.appspot.com/o/Picture1.png?alt=media&token=0958ee42-545a-40a5-837c-bd5e51700221"
+        src="https://drive.google.com/file/d/1F9bys7IB6Il8hpHAYoOLI6Y5LyAXmAYQ/view?usp=drive_link"
         style={{ margin: "5rem 0 0 0" }}
       />
       <br />
