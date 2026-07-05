@@ -5,12 +5,9 @@ import { getDatabase, ref, child, get } from "firebase/database";
 import TypingAnimation from "../TypingAnimation";
 
 export default function Perinfo() {
-  const [data, setData] = useState(`Hello! I am an aspiring software engineer who enjoys solving puzzles and
-  problems. I have strong technical skills and an academic background in
-  engineering, coding and development. I'm 
-  interested in internship roles in software development, full stack
-  development and game development. Please feel free to get in touch
-  with me via email at nkchaudhary00@gmail.com`);
+  const [data, setData] = useState(`A Software Development Engineer at Angel One, with a BTech in Computer Science from the Indian Institute of Technology, Dharwad, completed in August 2024. Academic background includes technical roles such as DevOps Engineer at o9 Solutions, Inc., where contributions were made to development and deployment projects.  
+
+Skilled in concurrent programming, architecture, and system development, with prior experience creating educational video content on Java and Python for Bit.Byte.Binary. Dedicated to leveraging a strong engineering foundation and technical skills to deliver impactful software solutions.`);
 
   useEffect(() => {
     const dbRef = ref(getDatabase());

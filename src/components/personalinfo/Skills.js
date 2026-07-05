@@ -5,6 +5,7 @@ import androidico from "../../images/android.svg";
 import gitico from "../../images/git.svg";
 import expressico from "../../images/express.svg";
 import cloudico from "../../images/cloud.svg";
+import rubrik from "../../images/Picture1.png";
 export default function Skills() {
   return (
     <div className="skills" id="skills">
@@ -13,7 +14,7 @@ export default function Skills() {
         height="400"
         width="400"
         alt="GIF"
-        src="https://drive.google.com/file/d/1F9bys7IB6Il8hpHAYoOLI6Y5LyAXmAYQ/view?usp=drive_link"
+        src={rubrik}
         style={{ margin: "5rem 0 0 0" }}
       />
       <br />
@@ -90,7 +91,7 @@ export default function Skills() {
         alt="code_image"
           height="40"
           width="40"
-          src="https://brandeps.com/logo-download/C/CSS-3-logo-vector-01.svg"
+          src="https://www.clipartmax.com/png/middle/87-877926_git-git-icon.png"
         />
       </code>
       <code>
@@ -102,7 +103,7 @@ export default function Skills() {
         alt="code_image"
           height="40"
           width="40"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/1024px-Git_icon.svg.png"
+          src="https://www.clipartmax.com/png/middle/421-4211389_check-official-docker-logo.png"
         />
       </code>
       <code>
