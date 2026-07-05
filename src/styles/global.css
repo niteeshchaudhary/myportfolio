@@ -1,0 +1,170 @@
+:root {
+  /* Space + Retro Aesthetic - Dark Theme */
+  --bg-primary: #050510;
+  --bg-secondary: #0a0a1f;
+  --bg-tertiary: #12122f;
+  --text-primary: #e0e0ff;
+  --text-secondary: #a0a0d0;
+  --text-muted: #606080;
+  --accent-primary: #7c3aed;
+  --accent-secondary: #a855f7;
+  --accent-tertiary: #d946ef;
+  --accent-cyan: #00f5ff;
+  --accent-pink: #ff2a6d;
+  --border-color: rgba(124, 58, 237, 0.3);
+  --card-bg: rgba(10, 10, 31, 0.7);
+  --card-hover: rgba(18, 18, 47, 0.8);
+  --glow-purple: rgba(124, 58, 237, 0.5);
+  --glow-cyan: rgba(0, 245, 255, 0.4);
+  
+  /* Gradients */
+  --primary-gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #d946ef 100%);
+  --space-gradient: linear-gradient(180deg, #050510 0%, #0a0a1f 50%, #12122f 100%);
+  --retro-gradient: linear-gradient(90deg, #7c3aed, #00f5ff, #ff2a6d);
+  --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --glow-gradient: radial-gradient(circle, rgba(124,58,237,0.3) 0%, rgba(168,85,247,0.1) 50%, transparent 100%);
+  --card-gradient: linear-gradient(145deg, rgba(10,10,31,0.9) 0%, rgba(18,18,47,0.7) 100%);
+  
+  /* Shadows & Glow */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.8);
+  --glow-sm: 0 0 20px rgba(124, 58, 237, 0.5);
+  --glow-md: 0 0 40px rgba(124, 58, 237, 0.7);
+  --glow-lg: 0 0 80px rgba(124, 58, 237, 0.9);
+  --neon-glow: 0 0 10px var(--glow-purple), 0 0 20px var(--glow-purple), 0 0 40px var(--glow-purple);
+  
+  /* Typography */
+  --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+  --font-retro: 'Courier New', Courier, monospace;
+  
+  /* Spacing */
+  --section-padding: 5rem 2rem;
+  --container-max: 1400px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: transparent;
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-tertiary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--accent-secondary);
+  outline-offset: 2px;
+}
+
+/* Utility Classes */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -2px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
