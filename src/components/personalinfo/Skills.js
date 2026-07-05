@@ -5,6 +5,7 @@ import androidico from "../../images/android.svg";
 import gitico from "../../images/git.svg";
 import expressico from "../../images/express.svg";
 import cloudico from "../../images/cloud.svg";
+import rubrik from "../../images/Picture1.png";
 export default function Skills() {
   return (
     <div className="skills" id="skills">
@@ -13,7 +14,7 @@ export default function Skills() {
         height="400"
         width="400"
         alt="GIF"
-        src="https://drive.google.com/file/d/1F9bys7IB6Il8hpHAYoOLI6Y5LyAXmAYQ/view?usp=drive_link"
+        src={rubrik}
         style={{ margin: "5rem 0 0 0" }}
       />
       <br />
