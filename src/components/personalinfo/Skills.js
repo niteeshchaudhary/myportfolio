@@ -103,7 +103,7 @@ export default function Skills() {
         alt="code_image"
           height="40"
           width="40"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/1024px-Git_icon.svg.png"
+          src="https://www.clipartmax.com/png/middle/421-4211389_check-official-docker-logo.png"
         />
       </code>
       <code>
