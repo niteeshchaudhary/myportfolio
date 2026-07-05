@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
 import Portfolio from './components/projects/Portfolio';
 import Skills from './components/skills/Skills';
 import Experience from './components/experience/Experience';
@@ -10,6 +10,7 @@ import './App.css';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
     { id: 'home', label: 'Home' },
@@ -56,6 +57,7 @@ function App() {
             <span className="logo-text terminal-text">NKC</span>
           </motion.div>
 
+          {/* Desktop Navigation */}
           <div className="nav-links">
             {navItems.map((item, index) => (
               <motion.button
@@ -82,8 +84,44 @@ function App() {
             >
               <FaGithub />
             </motion.a>
+            
+            {/* Mobile Menu Toggle */}
+            <motion.button
+              className="mobile-menu-toggle"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              whileTap={{ scale: 0.9 }}
+            >
+              {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+            </motion.button>
           </div>
         </div>
+        
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              className="mobile-menu"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {navItems.map((item) => (
+                <motion.button
+                  key={item.id}
+                  className={`mobile-nav-link ${activeSection === item.id ? 'active' : ''}`}
+                  onClick={() => {
+                    scrollToSection(item.id);
+                    setMobileMenuOpen(false);
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {item.label}
+                </motion.button>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Hero Section */}
