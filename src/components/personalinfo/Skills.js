@@ -91,7 +91,7 @@ export default function Skills() {
         alt="code_image"
           height="40"
           width="40"
-          src="https://brandeps.com/logo-download/C/CSS-3-logo-vector-01.svg"
+          src="https://www.clipartmax.com/png/middle/87-877926_git-git-icon.png"
         />
       </code>
       <code>
